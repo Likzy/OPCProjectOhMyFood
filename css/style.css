@@ -1,0 +1,39 @@
+body {
+    font-family: "Roboto";
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+    width: 100%;
+}
+
+.logocontainer {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.headerlogo {
+    width: 50%;
+}
+
+.locationcontainer {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAEAEA;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.locationicon {}
+
+.locationtext {
+    margin-left: 15px;
+}
