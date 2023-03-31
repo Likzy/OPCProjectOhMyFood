@@ -18,7 +18,7 @@ a:link {
     filter: invert();
 }
 
-.imgfill {
+.imgcover {
     object-fit: cover;
 }
 
@@ -186,14 +186,16 @@ header {
 .restaurantscards h1 {
     margin-left: 3.5%;
 }
-
-.restaurantcard img {
+.restaurantimg {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
     width: 100%;
-    height: 70%;
+    height: 76%;
+    object-fit: cover;
 }
-
+.imgsmaller{
+    height: 40%;
+}
 .restaurantname {
     position: absolute;
     left: 4.5%;
@@ -288,6 +290,10 @@ footer {
 
 .restaurantcardredirect{
     padding-bottom: 5.5%;
+}
+
+.imgheadersmaller {
+    height: 250px;
 }
 .menucontainer{
     /*position: absolute;
