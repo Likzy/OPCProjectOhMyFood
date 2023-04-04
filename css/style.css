@@ -23,6 +23,74 @@ a:link {
     object-fit: cover;
 }
 
+
+
+.loader{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.hideafter3sec{
+    animation: hideAnimation 1s ease-in 2s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes hideAnimation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+      border: 0;
+    }
+    
+    
+    100%{
+        transform: scale(0);
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 500px;
+        visibility: hidden;
+    }
+  }
+
+.loaderlogo{
+    width: 33%;
+}
+
+.loading-bar {
+    margin-top: 30px;
+    width: 35%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .loading-bar-fill {
+    height: 100%;
+    background-color: #0077ff;
+    border-radius: 5px;
+    width: 0%;
+    animation: fill-loading-bar 2s ease-in-out forwards;
+  }
+
+  
+@keyframes fill-loading-bar {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
 header {
     display: flex;
     flex-direction: column;
@@ -215,31 +283,46 @@ header {
 
 }
 
+
+
 .favoriteiconfull {
-    visibility: hidden;
+    position: absolute;
     bottom: 10%;
     right: 5%;
     position: absolute;
     font-size: 25px;
-}
+    color: red;
+    transform: scale(0);
+    transition: transform 1s;
+    z-index: 0;
+}   
 
 .favoriteicon {
+    padding: 5px;
     position: absolute;
     font-size: 25px;
-    bottom: 10%;
-    right: 5%;
-}
-
-.favoriteicon:active {
-    display: none;
+    bottom: 8%;
+    right: 3.5%;
+    z-index: 1;
 
 }
 
-.favoriteicon:active .favoriteiconfull {
+.favoriteicon:hover + .favoriteiconfull{
+    transform: scale(1);
+    
+}
+
+.favoriteicon:not(:hover) + .favoriteiconfull{
     visibility: visible;
-
+    transform: scale(0);
 
 }
+.favoriteicon:active + .favoriteiconfull {
+    visibility: visible;
+    scale: (1);
+}
+
+
 
 footer {
     color: white;
@@ -325,6 +408,7 @@ footer {
     position: absolute;
     right: 6%;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .stepofthemenu {
@@ -348,6 +432,7 @@ footer {
     width: 90%;
     margin-bottom: 15px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .food{
