@@ -376,6 +376,33 @@ footer {
     padding-bottom: 5.5%;
 }
 
+.favoriteiconfullmenu{
+        position: absolute;
+        right: 7.5%;
+        font-size: 23px;
+        color: red;
+        transform: scale(0);
+        transition: transform 1s;
+        z-index: 0;
+    
+
+}
+
+.favoriteiconmenu:hover + .favoriteiconfullmenu{
+    transform: scale(1);
+    
+}
+
+.favoriteiconmenu:not(:hover) + .favoriteiconfullmenu{
+    visibility: visible;
+    transform: scale(0);
+
+}
+.favoriteiconmenu:active + .favoriteiconfullmenu{
+    visibility: visible;
+    scale: (1);
+}
+
 .imgheadersmaller {
     height: 250px;
 }
@@ -405,10 +432,12 @@ footer {
 }
 
 .favoriteiconmenu{
+    padding: 5px;
     position: absolute;
     right: 6%;
     font-size: 24px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .stepofthemenu {
