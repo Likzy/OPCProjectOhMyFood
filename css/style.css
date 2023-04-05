@@ -26,7 +26,7 @@ a:link {
 
 
 .loader{
-    display: flex;
+    display: none; /*-------------------------------------------------------*/
     flex-direction: column;
     width: 100%;
     height: 100%;
@@ -171,6 +171,7 @@ header {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
 .stepguidecard {
+   position: relative;
     background-color: #F7F7F7;
     width: 87%;
     height: 70px;
@@ -189,7 +190,7 @@ header {
 
 .stepguidenumber {
     position: absolute;
-    right: 88.5%;
+    right: 95%;
     text-align: center;
     font-size: 15px;
     color: white;
@@ -203,7 +204,7 @@ header {
 
 .stepguideicon {
     position: absolute;
-    right: 78.5%;
+    right: 83.5%;
     font-size: 20px;
     color: #7E7E7E;
 }
@@ -488,4 +489,102 @@ footer {
     right : 5%;
 }
 
+
+/*---------------------------------RESPONSIVE TABLETTE--------------------------------------*/
+
+
+/*---------------------------------RESPONSIVE Desktop--------------------------------------*/
+
+@media screen and (min-width: 1024px) {
+
+    .headerlogo{
+        width: 20%;
+    }
+    
+    .button{
+        width: 15%;
+    }
+    .stepguidesection{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .stepbystepguide{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        margin-left: 12.5%;
+    }
+    .stepguidetitle{
+       
+        width: 80%;
+        margin-left: 12.5%;
+
+    }
+
+    .stepguidecard{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 4% ;
+    }
+    .restaurantsectiontitle{
+        margin-left: 12.5%
+    }
+    .restaurantscardssection{
+        display: flex;
+        flex-direction: column;
+        background-color: #f6f6f6;
+        
+        
+    }
+    .restaurantscards{
+        display: flex;
+        width: 87.5%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 12.5%;
+    }
+    .restaurantcard{
+        width: 40%;
+        margin-right: 8%;
+        margin-left: 0;
+    }
+
+    .restaurantimg{
+        height: 53%;
+    }
+    .imgsmaller{
+        height: 28%;
+    }
+
+    footer{
+        height: 120px;
+    }
+    .footercontent{
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+    }
+    .logofooter{
+        display: none;
+    }
+    .logofooterdesktop{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 10%;
+        filter: invert();
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .footermarginleft{
+        margin-left: 1%;
+    }
+    .footermargintop{
+        margin-top: 60px;
+    }
+    .footermarginbot{
+        margin-bottom: 15px;
+    }
+}   
 
