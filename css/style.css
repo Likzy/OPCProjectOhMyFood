@@ -1,7 +1,8 @@
 body {
     font-family: "Roboto";
 }
-header{
+
+header {
     font-family: "Roboto";
 }
 
@@ -15,8 +16,8 @@ a:link {
     text-decoration: none;
 }
 
-.invertedcolor{
-    filter: invert();
+.invertedcolor {
+    filter: invert(1);
 }
 
 .imgcover {
@@ -25,7 +26,7 @@ a:link {
 
 
 
-.loader{
+.loader {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -36,7 +37,8 @@ a:link {
     justify-content: center;
     background-color: white;
 }
-.hideafter3sec{
+
+.hideafter3sec {
     animation: hideAnimation 1s ease-in 2s;
     animation-fill-mode: forwards;
 }
@@ -44,13 +46,13 @@ a:link {
 
 @keyframes hideAnimation {
     0% {
-      transform: scale(1);
-      opacity: 1;
-      border: 0;
+        transform: scale(1);
+        opacity: 1;
+        border: 0;
     }
-    
-    
-    100%{
+
+
+    100% {
         transform: scale(0);
         opacity: 1;
         width: 100%;
@@ -58,9 +60,9 @@ a:link {
         border-radius: 500px;
         visibility: hidden;
     }
-  }
+}
 
-.loaderlogo{
+.loaderlogo {
     width: 33%;
 }
 
@@ -71,25 +73,26 @@ a:link {
     background-color: #ddd;
     border-radius: 5px;
     margin-bottom: 10px;
-  }
-  
-  .loading-bar-fill {
+}
+
+.loading-bar-fill {
     height: 100%;
     background-color: #0077ff;
     border-radius: 5px;
     width: 0%;
     animation: fill-loading-bar 2s ease-in-out forwards;
-  }
+}
 
-  
+
 @keyframes fill-loading-bar {
     from {
-      width: 0%;
+        width: 0%;
     }
+
     to {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
 header {
     display: flex;
@@ -158,7 +161,7 @@ header {
     color: white;
     height: 55px;
     width: 60%;
-    background: linear-gradient(-5deg,#9356DC -11.44%, #FF79DA 123.93%);
+    background: linear-gradient(-5deg, #9356DC -11.44%, #FF79DA 123.93%);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 29px;
     margin-bottom: 50px;
@@ -166,12 +169,13 @@ header {
     cursor: pointer;
 }
 
-.button:hover{
-    background: linear-gradient(180deg, #FF79DA,#9356DC);
+.button:hover {
+    background: linear-gradient(180deg, #FF79DA, #9356DC);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.35);
 }
+
 .stepguidecard {
-   position: relative;
+    position: relative;
     background-color: #F7F7F7;
     width: 87%;
     height: 70px;
@@ -184,7 +188,7 @@ header {
     margin-bottom: 25px;
 }
 
-.stepguidetitle{
+.stepguidetitle {
     margin-left: 5%;
 }
 
@@ -209,9 +213,10 @@ header {
     color: #7E7E7E;
 }
 
-.violeticon{
+.violeticon {
     color: #9356DC
 }
+
 .stepguidetext {
     display: flex;
     font-size: 18px;
@@ -243,7 +248,7 @@ header {
     margin-bottom: 20px;
 }
 
-.restaurantcardredirect{
+.restaurantcardredirect {
     width: 100%;
     display: flex;
     padding-bottom: 5.5%;
@@ -264,6 +269,7 @@ header {
 .restaurantsectiontitle {
     margin-left: 5%;
 }
+
 .restaurantimg {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
@@ -271,9 +277,11 @@ header {
     height: 76%;
     object-fit: cover;
 }
-.imgsmaller{
+
+.imgsmaller {
     height: 40%;
 }
+
 .restaurantname {
     position: absolute;
     left: 4.5%;
@@ -304,7 +312,7 @@ header {
     transform: scale(0);
     transition: transform 1s;
     z-index: 0;
-}   
+}
 
 .favoriteicon {
     padding: 5px;
@@ -313,24 +321,16 @@ header {
     bottom: 8%;
     right: 3.5%;
     z-index: 1;
+    cursor: pointer;
 
 }
 
-.favoriteicon:hover + .favoriteiconfull{
+
+.favoriteicon:active,
+.favoriteicon:focus+.favoriteiconfull {
+    visibility: visible;
     transform: scale(1);
-    
 }
-
-.favoriteicon:not(:hover) + .favoriteiconfull{
-    visibility: visible;
-    transform: scale(0);
-
-}
-.favoriteicon:active + .favoriteiconfull {
-    visibility: visible;
-    scale: (1);
-}
-
 
 
 footer {
@@ -344,7 +344,6 @@ footer {
     margin-top: 20px;
     margin-bottom: 20px;
     width: 30%;
-    filter: invert();
 
 }
 
@@ -367,12 +366,12 @@ footer {
     font-size: 14px;
 }
 
-.logofooterdesktop{
+.logofooterdesktop {
     display: none;
 }
 
 /*---------------------- CSS MENU----------------------------------------*/
-.returnarrow{
+.returnarrow {
     text-decoration: none;
     position: relative;
     width: 5%;
@@ -381,41 +380,34 @@ footer {
     left: 5%;
 }
 
-.returnarrowicon{
+.returnarrowicon {
     font-size: 21px;
 }
 
-.favoriteiconfullmenu{
-        position: absolute;
-        right: 7.5%;
-        font-size: 23px;
-        color: red;
-        transform: scale(0);
-        transition: transform 1s;
-        z-index: 0;
-    
-
-}
-
-.favoriteiconmenu:hover + .favoriteiconfullmenu{
-    transform: scale(1);
-    
-}
-
-.favoriteiconmenu:not(:hover) + .favoriteiconfullmenu{
-    visibility: visible;
+.favoriteiconfullmenu {
+    position: absolute;
+    right: 7.5%;
+    font-size: 23px;
+    color: red;
     transform: scale(0);
+    transition: transform 1s;
+    z-index: 0;
+
 
 }
-.favoriteiconmenu:active + .favoriteiconfullmenu{
+
+.favoriteiconmenu:active,
+.favoriteiconmenu:focus+.favoriteiconfullmenu {
     visibility: visible;
-    scale: (1);
+    transform: scale(1);
 }
+
 
 .imgheadersmaller {
     height: 250px;
 }
-.menucontainer{
+
+.menucontainer {
     position: relative;
     z-index: 2;
     background-color: #F7F7F7;
@@ -427,20 +419,22 @@ footer {
     align-items: center;
     margin-top: -80px;
 }
-.restaurantnameandfavicon{
+
+.restaurantnameandfavicon {
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.restaurantnamebig{
+
+.restaurantnamebig {
     font-family: "Shrikhand";
     font-size: 28px;
     margin-left: 5%;
 }
 
-.favoriteiconmenu{
+.favoriteiconmenu {
     padding: 5px;
     position: absolute;
     right: 6%;
@@ -473,36 +467,37 @@ footer {
     cursor: pointer;
 }
 
-.appetizer{
+.appetizer {
     margin-left: 200%;
     animation: menuappearance 2s ease-in-out 1s forwards;
 }
-.maincourse{
+
+.maincourse {
     margin-left: 200%;
     animation: menuappearance 2s ease-in-out 3s forwards;
 }
-.dessert{
+
+.dessert {
     margin-left: 200%;
     animation: menuappearance 2s ease-in-out 5s forwards;
 }
 
-@keyframes menuappearance{
-    0%{
-        
-    }
-    100%{
+@keyframes menuappearance {
+    0% {}
+
+    100% {
         margin-left: 0;
 
     }
 
 
 }
-.checkmark{
+
+.checkmark {
     background: #99E2D0;
     display: flex;
-    text-align: center;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 5%;
     height: 100%;
     border-top-right-radius: 20px;
@@ -513,35 +508,39 @@ footer {
     visibility: hidden;
 }
 
-.checkmarkicon{
+.checkmarkicon {
     color: white;
-    font-size: 25px;
+    margin-right: 15px;
+    font-size: 15px;
 }
-.menucard:hover .checkmark{
+
+.menucard:active .checkmark,
+.menucard:focus .checkmark {
     visibility: visible;
     animation: checkmarkAnimation 1s ease-in-out forwards;
 }
 
-.menucard:hover .checkmarkicon{
+.menucard:active .checkmarkicon,
+.menucard:focus .checkmarkicon {
     visibility: visible;
     animation: checkmarkAnimation 1s ease-in-out forwards;
 }
 
-@keyframes checkmarkAnimation{
-    0%{
+@keyframes checkmarkAnimation {
+    0% {
         font-size: 0;
         width: 0;
 
     }
-    100%{ 
-        font-size: 25px;
-        width: 4%;
+
+    100% {
+        width: 6%;
 
     }
 }
 
 
-.food{
+.food {
     margin: 0;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -549,7 +548,8 @@ footer {
     font-size: 18px;
 
 }
-.sidedish{
+
+.sidedish {
     margin: 0;
     font-weight: 300;
     font-size: 15px;
@@ -557,168 +557,290 @@ footer {
 
 }
 
-.price{
+.price {
     position: absolute;
     font-weight: 700;
     font-size: 15px;
-    bottom : 1% ;
-    right : 5%;
+    bottom: 1%;
+    right: 8%;
 }
 
 
-/*---------------------------------RESPONSIVE TABLETTE--------------------------------------*/
+/*---------------------------------RESPONSIVE TABLETT--HOME--PAGE--------------------------------------*/
 @media screen and (min-width: 800px) {
-.headerlogo{
-    width: 20%;
-}
-.button{
-    width: 30%;
-}
-.stepguidetitle{
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-}
-.stepbystepguide{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.stepguidecard{
-    margin-left: 0;
-    width: 50%;
-}
-.stepguidenumber{
-    right: 97.3%;
-}
-.restaurantscardssection{
-    background-color: #f6f6f6;
+    .headerlogo {
+        width: 20%;
+    }
+
+    .button {
+        width: 30%;
+    }
+
+    .stepguidetitle {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .stepbystepguide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stepguidecard {
+        margin-left: 0;
+        width: 50%;
+    }
+
+    .stepguidenumber {
+        right: 97.3%;
+    }
+
+    .restaurantscardssection {
+        background-color: #f6f6f6;
+    }
+
+    .favoriteicon:hover+.favoriteiconfull {
+        transform: scale(1);
+
+    }
+
+    .favoriteicon:not(:hover)+.favoriteiconfull {
+        visibility: visible;
+        transform: scale(0);
+
+    }
+
+    .favoriteicon:active+.favoriteiconfull {
+        visibility: visible;
+        scale: (1);
+    }
+
+
+    .restaurantsectiontitle {
+        margin-left: 0;
+        padding-top: 20px;
+        width: 100%;
+        text-align: center;
+
+        margin-left: 0;
+    }
+
+    .restaurantscards {
+        align-items: center;
+
+    }
+
+    .restaurantcard {
+        margin-left: 0;
+        width: 60%;
+    }
+
+    .footercontent {
+        margin-left: 0;
+        align-items: center;
+    }
+
+
+
+    /*--------------RESPONSIVE MENU-----------------------*/
+
+    .imgmenuheader {
+        height: 300px;
+        object-fit: cover;
+    }
+
+
+
+    .MENU {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menucontainer {
+        width: 70%;
+    }
+
+    .restaurantnameandfavicon {
+        margin-top: 20px;
+    }
+
+    .restaurantnamebig {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .favoriteiconmenu {
+        right: 20%;
+    }
+
+    .favoriteiconfullmenu {
+        right: 21%;
+    }
+
+    .favoriteiconmenu:hover+.favoriteiconfullmenu {
+        transform: scale(1);
+
+    }
+
+    .favoriteiconmenu:not(:hover)+.favoriteiconfullmenu {
+        visibility: visible;
+        transform: scale(0);
+
+    }
+
+    .favoriteiconmenu:active+.favoriteiconfullmenu {
+        visibility: visible;
+        scale: (1);
+    }
+
+    .stepofthemenu {
+        width: 60%;
+    }
+
+    @keyframes checkmarkAnimation {
+        0% {
+            font-size: 0;
+            width: 0;
+
+        }
+
+        100% {
+            width: 7%;
+
+        }
+    }
+
+    .menucard:hover .checkmark {
+        visibility: visible;
+        animation: checkmarkAnimation 1s ease-in-out forwards;
+    }
+
+    .menucard:hover .checkmarkicon {
+        visibility: visible;
+        animation: checkmarkAnimation 1s ease-in-out forwards;
+    }
+
+    .checkmarkicon {
+        font-size: 16px;
+    }
 }
 
-.restaurantsectiontitle{
-    margin-left: 0;
-    padding-top: 20px;
-    width: 100%;
-    text-align: center;
-    
-    margin-left: 0;
-}
-.restaurantscards{
-    align-items: center;
-    
-}
-.restaurantcard{
-    margin-left: 0;
-    width: 60%;
-}
-
-.footercontent{
-    margin-left: 0;
-    align-items: center;
-}
-
-}
-
-/*---------------------------------RESPONSIVE Desktop--------------------------------------*/
+/*---------------------------------RESPONSIVE Desktop HOME PAGE--------------------------------------*/
 
 @media screen and (min-width: 1180px) {
 
-    .headerlogo{
+    .headerlogo {
         width: 20%;
     }
-    
-    .button{
+
+    .button {
         width: 20%;
     }
-    .stepguidesection{
+
+    .stepguidesection {
         display: flex;
         align-items: center;
         width: 100%;
         justify-content: center;
     }
-    .stepbystepguide{
+
+    .stepbystepguide {
         width: 80%;
         display: flex;
         flex-direction: row;
         margin-left: 12.5%;
     }
-    .stepguidetitle{
+
+    .stepguidetitle {
         width: fit-content;
         margin-left: 12.5%;
 
     }
 
-    .stepguidenumber{
+    .stepguidenumber {
         right: 96%;
     }
 
-    .stepguidecard{
+    .stepguidecard {
         width: 100%;
         margin-left: 0;
-        margin-right: 4% ;
+        margin-right: 4%;
     }
-    .restaurantsectiontitle{
+
+    .restaurantsectiontitle {
         width: fit-content;
         margin-left: 12.5%
     }
-    .restaurantscardssection{
+
+    .restaurantscardssection {
         display: flex;
         flex-direction: column;
         background-color: #f6f6f6;
-        
-        
+
+
     }
-    .restaurantscards{
+
+    .restaurantscards {
         display: flex;
         width: 87.5%;
         flex-direction: row;
         flex-wrap: wrap;
         margin-left: 12.5%;
     }
-    .restaurantcard{
+
+    .restaurantcard {
         display: flex;
         width: 40%;
         margin-right: 8%;
         margin-left: 0;
     }
 
-    .restaurantimgcontainer{
+    .restaurantimgcontainer {
         display: flex;
         border: 5px solid red;
         height: 100%;
     }
 
-   
 
-    footer{
+
+    footer {
         height: 120px;
     }
-    .footercontent{
+
+    .footercontent {
         flex-direction: row;
         align-items: center;
         justify-content: end;
     }
-    .logofooter{
+
+    .logofooter {
         display: none;
     }
-    .logofooterdesktop{
+
+    .logofooterdesktop {
         display: flex;
         margin-top: 20px;
         margin-bottom: 20px;
         width: 10%;
-        filter: invert();
         margin-left: 5%;
         margin-right: 5%;
     }
-    .footermarginleft{
+
+    .footermarginleft {
         margin-left: 1%;
     }
-    .footermargintop{
+
+    .footermargintop {
         margin-top: 60px;
     }
-    .footermarginbot{
+
+    .footermarginbot {
         margin-bottom: 15px;
     }
-}   
-
+}
