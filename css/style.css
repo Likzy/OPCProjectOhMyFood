@@ -67,6 +67,7 @@ a:link {
 }
 
 .loading-bar {
+    position: relative;
     margin-top: 30px;
     width: 35%;
     height: 10px;
@@ -75,22 +76,36 @@ a:link {
     margin-bottom: 10px;
 }
 
-.loading-bar-fill {
+.mask-bar {
     height: 100%;
-    background-color: #0077ff;
+    background-color: #ddd;
     border-radius: 5px;
     width: 0%;
     animation: fill-loading-bar 2s ease-in-out forwards;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    margin-top: 0;
+}
+.loading-bar-fill{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%); ;
+    position: absolute;
+    border-radius: 5px;
+    top: 0;
+    right: 0;
+    z-index: 9;
 }
 
 
 @keyframes fill-loading-bar {
     from {
-        width: 0%;
+        width: 100%;
     }
 
     to {
-        width: 100%;
+        width: 0%;
     }
 }
 
@@ -304,33 +319,43 @@ header {
 
 .favoriteiconfull {
     position: absolute;
-    bottom: 10%;
-    right: 5%;
+    bottom: 8%;
+    right: 3.5%;
     position: absolute;
     font-size: 25px;
-    color: red;
-    transform: scale(0);
-    transition: transform 1s;
-    z-index: 0;
+    color: #9c47fc;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 5;
+    cursor: pointer;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 .favoriteicon {
-    padding: 5px;
+    display: block;
     position: absolute;
     font-size: 25px;
     bottom: 8%;
     right: 3.5%;
-    z-index: 1;
+    z-index: 0;
+    opacity: 1;
     cursor: pointer;
 
 }
 
-
-.favoriteicon:active,
-.favoriteicon:focus+.favoriteiconfull {
+.favoriteiconfull:hover {
     visibility: visible;
-    transform: scale(1);
+    opacity: 1;
 }
+
+.favoriteiconfull:hover + .favoriteicon{
+    opacity: 0;
+}
+
 
 
 footer {
@@ -384,23 +409,6 @@ footer {
     font-size: 21px;
 }
 
-.favoriteiconfullmenu {
-    position: absolute;
-    right: 7.5%;
-    font-size: 23px;
-    color: red;
-    transform: scale(0);
-    transition: transform 1s;
-    z-index: 0;
-
-
-}
-
-.favoriteiconmenu:active,
-.favoriteiconmenu:focus+.favoriteiconfullmenu {
-    visibility: visible;
-    transform: scale(1);
-}
 
 
 .imgheadersmaller {
@@ -435,12 +443,30 @@ footer {
 }
 
 .favoriteiconmenu {
-    padding: 5px;
     position: absolute;
     right: 6%;
     font-size: 24px;
     cursor: pointer;
     z-index: 1;
+}
+
+.favoriteiconfullmenu {
+    position: absolute;
+    right: 6%;
+    font-size: 24px;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.favoriteiconfullmenu:hover{
+    opacity: 1;
 }
 
 .stepofthemenu {
@@ -458,6 +484,9 @@ footer {
 }
 
 .menucard {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
     position: relative;
     padding-left: 5%;
     box-shadow: 0px 4.01149px 15.0431px rgba(0, 0, 0, 0.1);
@@ -469,17 +498,17 @@ footer {
 
 .appetizer {
     margin-left: 200%;
-    animation: menuappearance 2s ease-in-out 1s forwards;
+    animation: menuappearance 1.2s ease-in-out 0.2s forwards;
 }
 
 .maincourse {
     margin-left: 200%;
-    animation: menuappearance 2s ease-in-out 3s forwards;
+    animation: menuappearance 1.2s ease-in-out 1s forwards;
 }
 
 .dessert {
     margin-left: 200%;
-    animation: menuappearance 2s ease-in-out 5s forwards;
+    animation: menuappearance 1.2s ease-in-out 1.8s forwards;
 }
 
 @keyframes menuappearance {
@@ -497,48 +526,34 @@ footer {
     background: #99E2D0;
     display: flex;
     justify-content: center;
+    text-align: center;
     align-items: center;
-    width: 5%;
     height: 100%;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     position: absolute;
     right: 0%;
     top: 0;
-    visibility: hidden;
+    width: 0;
+    transition: width 1s ease-in-out;
 }
 
 .checkmarkicon {
     color: white;
-    margin-right: 15px;
-    font-size: 15px;
+    font-size: 0px;
+    transition: all 1s ease-in-out;
+    
 }
 
-.menucard:active .checkmark,
-.menucard:focus .checkmark {
+.menucard:hover .checkmark {
     visibility: visible;
-    animation: checkmarkAnimation 1s ease-in-out forwards;
+    width: 60px;
 }
 
-.menucard:active .checkmarkicon,
-.menucard:focus .checkmarkicon {
+.menucard:hover .checkmarkicon {
     visibility: visible;
-    animation: checkmarkAnimation 1s ease-in-out forwards;
+    font-size: 20px;
 }
-
-@keyframes checkmarkAnimation {
-    0% {
-        font-size: 0;
-        width: 0;
-
-    }
-
-    100% {
-        width: 6%;
-
-    }
-}
-
 
 .food {
     margin: 0;
@@ -548,21 +563,34 @@ footer {
     font-size: 18px;
 
 }
-
+.sidedishandprice{
+    display: flex;
+    flex-direction: row;
+}
 .sidedish {
+    flex-shrink: 1;
+    border: 1px solid;
+    display: inline-block;
     margin: 0;
+    width: fit-content;
+    height: auto;
     font-weight: 300;
     font-size: 15px;
     margin-bottom: 10px;
+    text-overflow: ellipsis;
 
 }
 
 .price {
-    position: absolute;
+    flex: 1;
+    width: auto;
+    border: 1px solid;
+    display: inline-block;
+    text-align:end ;
     font-weight: 700;
     font-size: 15px;
-    bottom: 1%;
-    right: 8%;
+    margin-top: auto;
+
 }
 
 
@@ -602,21 +630,13 @@ footer {
         background-color: #f6f6f6;
     }
 
-    .favoriteicon:hover+.favoriteiconfull {
-        transform: scale(1);
 
-    }
-
-    .favoriteicon:not(:hover)+.favoriteiconfull {
+    /*.favoriteiconfull:not(:hover) {
         visibility: visible;
-        transform: scale(0);
+        transform: opacity(0);
 
     }
-
-    .favoriteicon:active+.favoriteiconfull {
-        visibility: visible;
-        scale: (1);
-    }
+    */
 
 
     .restaurantsectiontitle {
@@ -680,24 +700,9 @@ footer {
     }
 
     .favoriteiconfullmenu {
-        right: 21%;
+        right: 20%;
     }
 
-    .favoriteiconmenu:hover+.favoriteiconfullmenu {
-        transform: scale(1);
-
-    }
-
-    .favoriteiconmenu:not(:hover)+.favoriteiconfullmenu {
-        visibility: visible;
-        transform: scale(0);
-
-    }
-
-    .favoriteiconmenu:active+.favoriteiconfullmenu {
-        visibility: visible;
-        scale: (1);
-    }
 
     .stepofthemenu {
         width: 60%;
@@ -711,7 +716,7 @@ footer {
         }
 
         100% {
-            width: 7%;
+            width: 60px;
 
         }
     }
